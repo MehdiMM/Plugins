@@ -1,5 +1,7 @@
 # SeyedCutter v0.9
 
+![SeyedCutter logo](panel/assets/logo.webp)
+
 Premiere Pro CEP panel extension — **CSV cutter, cut only + paint RED, nothing removed.**
 
 ## What it does
@@ -31,15 +33,17 @@ You give SeyedCutter a CSV cut-list with time ranges. It:
    - Create markers (removed by design — cut only)
    - Require a key, registration, or network
 
-## How it works in code
+## Files
 
-- `panel/panel.html` + `panel/panel.css` — UI: file picker, Preview button, Cut button, status box
-- `panel/js/main.js` — parses CSV in JS, builds pipe-delimited payload (`start|end|label`), calls `seyedCutFromCSVText()` via CEP
-- `panel/jsx/host.jsx` — ExtendScript in Premiere: `seyedCutFromCSVText()`, `seyedRazorAt()`, `seyedSelectAll()`, `seyedDeselectAll()`, `seyedTrySetRed()`
-- `panel/js/CSInterface.js` — minimal CEP `evalScript` bridge
 - `CSXS/manifest.xml` — CEP registration: `com.seyed.cutter.panel`, Menu `SeyedCutter`, PPRO `[9.0,99.9]`
+- `panel/panel.html` + `panel/panel.css` — UI
+- `panel/assets/logo.webp` (+ `logo.png`) — extension logo
+- `panel/js/main.js` — CSV parse, builds `start|end|label` payload, calls `seyedCutFromCSVText()` via CEP
+- `panel/jsx/host.jsx` — ExtendScript: `seyedCutFromCSVText()`, `seyedRazorAt()`, `seyedSelectAll()`, `seyedDeselectAll()`, `seyedTrySetRed()`
+- `panel/js/CSInterface.js` — minimal CEP `evalScript` bridge
 - `installer.py` / `Install-Mac.command` / `Install-Windows.bat` — copy + enable unsigned extensions
 - `uninstall.py` — removes installed folder
+- `HELP.md` — install help (Mac + Windows paths)
 
 ## Requirements
 
@@ -55,6 +59,14 @@ You give SeyedCutter a CSV cut-list with time ranges. It:
 4. Choose CSV → Preview → **Cut sequence + Paint RED**
 5. Check status box in panel + Events panel in Premiere
 
+## Install locations
+
+- Mac per-user: `~/Library/Application Support/Adobe/CEP/extensions/SeyedCutter`
+- Mac system: `/Library/Application Support/Adobe/CEP/extensions/SeyedCutter`
+- Windows: `%APPDATA%\Adobe\CEP\extensions\SeyedCutter`
+
+Full steps: see `HELP.md`.
+
 ## Version
 
-- `0.9.0` — GitHub tag `v0.9`
+- `0.9.0` — GitHub tag `seyedcutter-v0.9`

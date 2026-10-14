@@ -1,36 +1,27 @@
-# plugins
+# SeyedCutter v0.9
 
-Collection of Premiere Pro CEP panel extensions.
+![SeyedCutter logo](SeyedCutter/panel/assets/logo.webp)
 
-## Plugins
+Premiere Pro CEP panel extension — **CSV cutter, cut only + paint RED, nothing removed.**
 
-| Plugin | Version | What it does |
-|--------|---------|--------------|
-| [SeyedCutter](SeyedCutter/) | `0.9.0` (tag `seyedcutter-v0.9`) | CSV cutter — cut only + paint RED, nothing removed. Load `start_seconds,end_seconds,...,label` CSV, razor timeline at every boundary, paint range clips RED. |
+This repo currently contains only **SeyedCutter**. Full docs live in [`SeyedCutter/`](SeyedCutter/).
 
-## Layout
+## What it does
 
-```
-plugins/
-  SeyedCutter/       # each plugin is a top-level folder
-    CSXS/manifest.xml
-    panel/
-    README.md        # what the plugin does
-    HELP.md          # where to install (Mac + Windows)
-    installer.py
-  FuturePlugin/      # add next plugin the same way
-```
+- Load a CSV cut-list (`start_seconds,end_seconds,start_tc,end_tc,label`)
+- Preview ranges
+- Razor the active sequence at every in/out boundary (Ctrl+Shift+K equivalent)
+- Paint those range clips RED (`setColorLabel(6)`)
+- Nothing is deleted, moved, or reordered. No key required.
 
-## Versioning
+See [`SeyedCutter/README.md`](SeyedCutter/README.md) for full usage, file map, and requirements.
 
-Each plugin versions independently with tags:
+## Quick start
 
-```
-<pluginname>-vX.Y   e.g. seyedcutter-v0.9, seyedcutter-v0.9.0
-```
+1. See [`SeyedCutter/HELP.md`](SeyedCutter/HELP.md) for install paths (Mac + Windows)
+2. Restart Premiere → `Window > Extensions > SeyedCutter`
+3. Focus your sequence → choose CSV → Preview → **Cut sequence + Paint RED**
 
-## Adding a new plugin
+## Version
 
-1. Copy your plugin folder in as `plugins/YourName/`
-2. Include its own `README.md` + `HELP.md`
-3. Commit, push, tag `yourname-v0.1`
+- `SeyedCutter 0.9.0` — tags `seyedcutter-v0.9`, `seyedcutter-v0.9.0`
