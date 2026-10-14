@@ -1,8 +1,8 @@
-# SeyedCutter v0.9
+# SeyedCutter
 
 ![SeyedCutter logo](SeyedCutter/panel/assets/logo.webp)
 
-Premiere Pro CEP panel extension - **CSV cutter, cut only + paint RED, nothing removed.**
+Premiere Pro CEP panel extension - **CSV cutter, Cut and Select** - cut only + paint RED, nothing removed.
 
 This repo currently contains only **SeyedCutter**. Full docs live in [`SeyedCutter/`](SeyedCutter/).
 
