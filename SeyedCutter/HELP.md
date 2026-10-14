@@ -144,16 +144,18 @@ An example file is included in the repo:
 SeyedCutter/examples/Timecodes-CutList-Example.csv
 ```
 
-Format (`start_seconds,end_seconds,start_tc,end_tc,label`):
+Format (`start_seconds,end_seconds,start_tc,end_tc` - labels removed):
 
 ```
-start_seconds,end_seconds,start_tc,end_tc,label
-62,65,00:01:02,00:01:05,Opening / entrance
-472,484,00:07:52,00:08:04,Funny entrance
-624,660,00:10:24,00:11:00,Funny dance
+start_seconds,end_seconds,start_tc,end_tc
+62,65,00:01:02,00:01:05
+472,484,00:07:52,00:08:04
+624,660,00:10:24,00:11:00
 ```
 
 Use it to test: choose this file in the panel → Preview (should show 35 ranges) → Cut sequence + Paint RED.
+
+Tip: you can give this example CSV to whatever AI you are using, and ask it to return your own cut list in the same format.
 
 ## 6. Uninstall
 
