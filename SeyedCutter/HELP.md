@@ -46,6 +46,36 @@ C:\Users\YOU\AppData\Roaming\Adobe\CEP\extensions\SeyedCutter\
 
 To open quickly on Windows: press `Win+R`, paste `%APPDATA%\Adobe\CEP\extensions`, press Enter.
 
+### Windows - Premiere version Plugins folder (fallback, if panel does not show up)
+
+On some Windows installs you may also need to put a copy in the Premiere version-specific Plug-Ins folder, for example for Premiere 2025:
+
+```
+C:\Program Files\Adobe\Adobe Premiere Pro 2025\Plug-Ins\Common\SeyedCutter
+```
+
+Full example:
+
+```
+C:\Program Files\Adobe\Adobe Premiere Pro 2025\Plug-Ins\Common\SeyedCutter\
+  CSXS\manifest.xml
+  panel\panel.html
+  panel\jsx\host.jsx
+  ...
+```
+
+For other versions replace `2025` with your version, for example:
+
+```
+C:\Program Files\Adobe\Adobe Premiere Pro 2024\Plug-Ins\Common\SeyedCutter
+```
+
+Steps:
+1. First install to `%APPDATA%\Adobe\CEP\extensions\SeyedCutter` as above.
+2. If `Window > Extensions > SeyedCutter` still does not appear after restart, copy the same `SeyedCutter` folder to the `Plug-Ins\Common` folder of your Premiere version.
+3. Restart Premiere Pro and check `Window > Extensions` again.
+4. Run Premiere as normal user (not only as Administrator) so it reads the same `%APPDATA%` location.
+
 ## 2. Automatic install (easiest)
 
 ### Mac
