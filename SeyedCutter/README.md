@@ -2,7 +2,7 @@
 
 ![SeyedCutter logo](panel/assets/logo.webp)
 
-Premiere Pro CEP panel extension — **CSV cutter, cut only + paint RED, nothing removed.**
+Premiere Pro CEP panel extension - **CSV cutter, cut only + paint RED, nothing removed.**
 
 ## What it does
 
@@ -15,7 +15,7 @@ You give SeyedCutter a CSV cut-list with time ranges. It:
    ```
    Only `start_seconds`, `end_seconds`, and `label` are used. `label` may contain commas.
 
-2. **Preview** — shows how many ranges were parsed and lists them (`1. 62s -> 65s : Opening`).
+2. **Preview** - shows how many ranges were parsed and lists them (`1. 62s -> 65s : Opening`).
 
 3. **Cut sequence (Ctrl+Shift+K equivalent) + Paint RED:**
    - Selects ALL clips in the active sequence
@@ -25,30 +25,30 @@ You give SeyedCutter a CSV cut-list with time ranges. It:
      - timecode string `HH:MM:SS:FF`
      - ticks string / number / seconds float
    - Deselects all, then re-selects only clips whose start/end (or middle) falls inside a CSV range
-   - Paints those range clips **RED** (`setColorLabel(6)`) — timeline clip first, source `projectItem` as fallback
+   - Paints those range clips **RED** (`setColorLabel(6)`) - timeline clip first, source `projectItem` as fallback
    - Reports: ranges, cuts attempted ok/fail, clips painted RED, first razor/paint errors
 
 4. **Does NOT:**
    - Delete, ripple-delete, close, move, or reorder anything
-   - Create markers (removed by design — cut only)
+   - Create markers (removed by design - cut only)
    - Require a key, registration, or network
 
 ## Files
 
-- `CSXS/manifest.xml` — CEP registration: `com.seyed.cutter.panel`, Menu `SeyedCutter`, PPRO `[9.0,99.9]`
-- `panel/panel.html` + `panel/panel.css` — UI
-- `panel/assets/logo.webp` (+ `logo.png`) — extension logo
-- `panel/js/main.js` — CSV parse, builds `start|end|label` payload, calls `seyedCutFromCSVText()` via CEP
-- `panel/jsx/host.jsx` — ExtendScript: `seyedCutFromCSVText()`, `seyedRazorAt()`, `seyedSelectAll()`, `seyedDeselectAll()`, `seyedTrySetRed()`
-- `panel/js/CSInterface.js` — minimal CEP `evalScript` bridge
-- `installer.py` / `Install-Mac.command` / `Install-Windows.bat` — copy + enable unsigned extensions
-- `uninstall.py` — removes installed folder
-- `HELP.md` — install help (Mac + Windows paths)
+- `CSXS/manifest.xml` - CEP registration: `com.seyed.cutter.panel`, Menu `SeyedCutter`, PPRO `[9.0,99.9]`
+- `panel/panel.html` + `panel/panel.css` - UI
+- `panel/assets/logo.webp` (+ `logo.png`) - extension logo
+- `panel/js/main.js` - CSV parse, builds `start|end|label` payload, calls `seyedCutFromCSVText()` via CEP
+- `panel/jsx/host.jsx` - ExtendScript: `seyedCutFromCSVText()`, `seyedRazorAt()`, `seyedSelectAll()`, `seyedDeselectAll()`, `seyedTrySetRed()`
+- `panel/js/CSInterface.js` - minimal CEP `evalScript` bridge
+- `installer.py` / `Install-Mac.command` / `Install-Windows.bat` - copy + enable unsigned extensions
+- `uninstall.py` - removes installed folder
+- `HELP.md` - install help (Mac + Windows paths)
 
 ## Requirements
 
 - Premiere Pro 2023 / 2024 / 2025 (PPRO 9.0+)
-- Unsigned extensions enabled (PlayerDebugMode = 1) — see `HELP.md`
+- Unsigned extensions enabled (PlayerDebugMode = 1) - see `HELP.md`
 - An open sequence / timeline focused before cutting
 
 ## Quick use
@@ -69,4 +69,4 @@ Full steps: see `HELP.md`.
 
 ## Version
 
-- `0.9.0` — GitHub tag `seyedcutter-v0.9`
+- `0.9.0` - GitHub tag `seyedcutter-v0.9`
